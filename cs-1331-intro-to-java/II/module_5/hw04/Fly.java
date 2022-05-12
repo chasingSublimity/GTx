@@ -45,10 +45,18 @@ public class Fly {
 
   // This will need to be verified
   public void grow(int addedMass) {
-    double speedDelta = (20 - mass) + ((mass + addedMass) % 20) * -.5;
+    while (addedMass > 0) {
+      if (mass < 20) {
+        speed++;
+      } else {
+        speed -= .5;
+      }
+
+      mass++;
+      addedMass--;
+    }
     
     mass += addedMass;
-    speed += speedDelta;
   }
 
   public boolean isDead() {

@@ -25,7 +25,7 @@ public class Pond {
     System.out.println(frog4);
     
     frog3.grow(4);
-    System.out.println(frog4);
+    System.out.println(frog3);
     
     System.out.println(frog2);
   }

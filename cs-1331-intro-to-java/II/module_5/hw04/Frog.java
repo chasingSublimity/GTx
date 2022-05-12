@@ -16,6 +16,7 @@ public class Frog {
     this.name = name;
     this.age = age;
     this.tongueSpeed = tongueSpeed;
+    this.isFroglet = age > 1 && age < 7;
   }
 
   public Frog(String name, double ageInYears, double tongueSpeed) {
@@ -64,10 +65,10 @@ public class Frog {
   }
 
   public String toString() {
-    String frogOrFroglet = isFroglet ? "froglet" : "frog";
+    String frogOrFroglet = isFroglet ? "froglet!" : "frog.";
     return String.format(
-      "My name is %s and I'm a rare %s! I'm %.2f months old and my tongue has a speed of %.2f.",
-      name, frogOrFroglet, (float) age, (float) tongueSpeed
+      "My name is %s and I'm a rare %s I'm %d months old and my tongue has a speed of %.2f.",
+      name, frogOrFroglet, age, (float) tongueSpeed
     );
   }
 }
