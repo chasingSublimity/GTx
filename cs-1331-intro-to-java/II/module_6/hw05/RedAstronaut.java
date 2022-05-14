@@ -73,5 +73,11 @@ public class RedAstronaut extends Player implements Impostor {
           && this.skill == astro.skill;
     }
     return false;
-}
+  }
+
+  public String toString() {
+    String str = super.toString();
+    String updated = str + " I am an " + skill + " player!";
+    return getSusLevel() > 15 ? updated.toUpperCase() : updated;
+  }
 }
