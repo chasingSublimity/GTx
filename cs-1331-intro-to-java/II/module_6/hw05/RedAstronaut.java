@@ -55,11 +55,12 @@ public class RedAstronaut extends Player implements Impostor {
       return;
     }
 
+    int currSusLevel = p.getSusLevel();
     int newSusLevel;
     if (getSusLevel() < 20) {
-      newSusLevel = getSusLevel() + (getSusLevel() / 2);
+      newSusLevel = currSusLevel + (currSusLevel / 2);
     } else {
-      newSusLevel = getSusLevel() + (getSusLevel() / 4);
+      newSusLevel = currSusLevel + (currSusLevel / 4);
     }
     p.setSusLevel(newSusLevel);
   }

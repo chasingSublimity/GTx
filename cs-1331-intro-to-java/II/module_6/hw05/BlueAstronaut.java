@@ -1,5 +1,5 @@
 import java.util.Arrays;
-public class BlueAstronaut extends Player {
+public class BlueAstronaut extends Player implements Crewmate {
   int numTasks;
   int taskSpeed;
 
