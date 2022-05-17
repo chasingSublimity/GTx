@@ -45,7 +45,7 @@ public class Dog extends Pet {
   public boolean equals(Object o) {
     if (o instanceof Dog) {
       Dog d = (Dog) o;
-      return super.equals(o) && droolRate == o.droolRate;
+      return super.equals(o) && droolRate == d.droolRate;
     }
     return false;
   }
