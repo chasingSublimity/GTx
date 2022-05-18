@@ -15,6 +15,7 @@ public class ClinicDriver {
         }
         String[] dayOneAppointments = dayOneReport.split("\\n");
         for (String appointment : dayOneAppointments) {
+            System.out.println(appointment);
             if (!clinic.addToFile(appointment)) {
                 System.out.println("Appointment could not be added to file!");
             }

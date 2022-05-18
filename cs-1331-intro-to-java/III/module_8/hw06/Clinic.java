@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.*;
@@ -31,8 +30,8 @@ public class Clinic {
         tokens = line.split(",");
 
         String name = tokens[0];
-        String type = tokens[1];
-        if (type.equals("Cat") && type.equals("Dog")) {
+        String type = tokens[1].toLowerCase();
+        if (type.equals("cat") && type.equals("dog")) {
           throw new InvalidPetException();
         }
 
@@ -79,7 +78,7 @@ public class Clinic {
         int timeToTreat = p.treat();
         String timeOut = addTime(tokens[3], timeToTreat);
         patientsSeen += String.format(
-          "%s,%s,%s,%s,%s,%s,%f,%d\n",  
+          "%s,%s,%s,%s,%s,%s,%.2f,%d\n",  
           name, type, tokens[2], day, tokens[3], timeOut, health, painLevel
         );
       }
@@ -129,18 +128,18 @@ public class Clinic {
       
       String printString = isNewPatient
         ? String.format(
-            "%s,%s,%d,%s,%d,%d,%f,%d\n",
+            "%s,%s,%d,%s,%d,%d,%.2f,%d\n",
             patientTokens[0], patientTokens[1], Integer.parseInt(patientTokens[2]),
             patientTokens[3], patientTokens[4], patientTokens[5], 
             Double.parseDouble(patientTokens[6]), Integer.parseInt(patientTokens[7])
           ) 
         : String.format(
-          "%s,%s,%s,%s,%f,%d\n",
+          "%s,%s,%s,%s,%.2f,%d\n",
           patientTokens[0], patientTokens[3], patientTokens[4], patientTokens[5], 
           Double.parseDouble(patientTokens[6]), Integer.parseInt(patientTokens[7])
         );
 
-        filePrint.append(printString);
+        filePrint.print(printString);
     } catch (FileNotFoundException e) {
       wasWriteSuccessful = false;
     } finally {
