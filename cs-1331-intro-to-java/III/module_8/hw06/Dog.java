@@ -30,7 +30,7 @@ public class Dog extends Pet {
   public void speak() {
     super.speak();
     String toSay = "";
-    for (int i = 0; i < getPainLevel(); i++) {
+    for (int i = 1; i <= getPainLevel(); i++) {
       toSay += "bark ";
     }
 
